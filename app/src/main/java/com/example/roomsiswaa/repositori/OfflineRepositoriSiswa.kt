@@ -4,7 +4,7 @@ import com.example.roomsiswaa.data.Siswa
 import com.example.roomsiswaa.data.SiswaDao
 import kotlinx.coroutines.flow.Flow
 
-class OfflineRepositoriSiswa (private val siswaDao: SiswaDao):RepositoriSiswa {
+class   OfflineRepositoriSiswa (private val siswaDao: SiswaDao):RepositoriSiswa {
     override fun getAllSiswaStream(): Flow<List<Siswa>> = siswaDao.getAllSiswa()
 
     override fun getSiswaStream(id: Int): Flow<Siswa?> = siswaDao.getSiswa(id)
