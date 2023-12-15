@@ -24,6 +24,8 @@ import com.example.roomsiswaa.ui.theme.halaman.DetailsDestination
 import com.example.roomsiswaa.ui.theme.halaman.DetailsScreen
 import com.example.roomsiswaa.ui.theme.halaman.EntrySiswaScreen
 import com.example.roomsiswaa.ui.theme.halaman.HomeScreen
+import com.example.roomsiswaa.ui.theme.halaman.ItemEditDestination
+import com.example.roomsiswaa.ui.theme.halaman.ItemEditScreen
 
 
 @Composable
@@ -87,6 +89,14 @@ fun HostNavigasi(
                     navController.navigate("$(ItemEditDestination.route}/$it")
                 }
             )
+        }
+        composable(
+            ItemEditDestination.routeWithArgs,
+            arguments = listOf(navArgument(ItemEditDestination.itemIdArg){
+                type = NavType.IntType
+            })
+        ){
+            ItemEditScreen(navigateBack = { navController.popBackStack() }, onNavigateUp = { navController.navigateUp() })
         }
     }
 }

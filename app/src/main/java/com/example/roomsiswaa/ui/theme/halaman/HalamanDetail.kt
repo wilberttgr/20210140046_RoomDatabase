@@ -105,7 +105,7 @@ private fun ItemDetailsBody(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium)),
+        modifier = modifier.padding(dimensionResource(id = R.dimen.padding_medium)),
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
     ) {
         var deleteConfirmationRequired by rememberSaveable {
